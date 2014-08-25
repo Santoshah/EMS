@@ -19,4 +19,27 @@
 		
 	}]);
 	
+	app.directive('footer',['$http',function($http){
+		return {
+			restrict : 'E',
+			templateUrl : "footer.html"
+		}
+		
+	}]);
+	
+	var loginApp = angular.module('login',[]);
+	
+	loginApp.controller('loginController',function(){
+		this.user = {};
+		this.logIn = function(user){
+			this.user = user;
+			if(user.userName === 'bbarun' && user.password === 'August09'){
+				alert('authenticated');
+			} else {
+				alert('not authenticated');
+			}
+		};
+		
+	});
+	
 })();
