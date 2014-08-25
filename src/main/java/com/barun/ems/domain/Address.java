@@ -23,6 +23,7 @@ public class Address implements Serializable{
 	private String city;
 	private String state;
 	private String country;
+	private String pincode;
 	/**
 	 * @return the id
 	 */
@@ -118,6 +119,12 @@ public class Address implements Serializable{
 	 */
 	public void setCountry(String country) {
 		this.country = country;
+	}
+	public String getPincode() {
+		return pincode;
+	}
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
 	}
 	
 }

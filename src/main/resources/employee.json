@@ -1,0 +1,35 @@
+{
+    "firstName": "bibhuti",
+    "middleName": "barun",
+    "lastName": "singh",
+    "employeeId": 44587,
+    "contactNumber": "4027489",
+    "email": "bbarun@capgemini.com",
+    "temporaryAddress": {
+        "doorNo": "21",
+        "streetName": "ABC",
+        "locality": "gachibowli",
+        "city": "Hyderabad",
+        "state": "AP",
+        "country": "india",
+        "pincode": "500032"
+    },
+    "permanentAddress": {
+        "doorNo": "21",
+        "streetName": "ABC",
+        "locality": "gachibowli",
+        "city": "Hyderabad",
+        "state": "AP",
+        "country": "india",
+        "pincode": "500032"
+    },
+    "designation": {
+        "designation": "Ass. Con."
+    },
+    "competency": {
+        "competency": "java"
+    },
+    "role": {
+        "role": "devloper"
+    }
+}
