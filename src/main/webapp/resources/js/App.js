@@ -15,31 +15,41 @@
 				});
 			},
 			controllerAs : 'emsctrl'
-		}
+		};
 		
 	}]);
 	
-	app.directive('footer',['$http',function($http){
+	app.directive('footer',['$http',function(){
 		return {
 			restrict : 'E',
 			templateUrl : "footer.html"
-		}
+		};
 		
 	}]);
 	
-	var loginApp = angular.module('login',[]);
 	
-	loginApp.controller('loginController',function(){
-		this.user = {};
-		this.logIn = function(user){
-			this.user = user;
-			if(user.userName === 'bbarun' && user.password === 'August09'){
-				alert('authenticated');
-			} else {
-				alert('not authenticated');
-			}
-		};
-		
-	});
+	var login = angular.module('login',[]);
+	login.controller("loginController", ['$scope', '$http',function($scope, $http) {
+      $scope.myForm = {};
+      $scope.myForm.userName = "username";
+      $scope.myForm.password  = "password";
+
+    $scope.myForm.submitTheForm = function(item, event) {
+      console.log("--> Submitting form");
+      var dataObject = {
+         name : $scope.myForm.userName
+         ,password  : $scope.myForm.password
+      };
+
+      var responsePromise = $http.post("/angularjs-examples/json-test-data.jsp", dataObject, {});
+      responsePromise.success(function(dataFromServer, status, headers, config) {
+         console.log(dataFromServer.title);
+      });
+       responsePromise.error(function(data, status, headers, config) {
+         alert("Submitting form failed!");
+      });
+    };
+
+ }]);
 	
 })();
