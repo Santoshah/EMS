@@ -1,0 +1,25 @@
+<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Employee ID</th>
+						<th>Name</th>
+						<th>Contact</th>
+						<th>Email</th>
+						<th>Designation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-ng-repeat="employee in emsctrl.employees">
+						<td>{{$index+1}}</td>
+						<td>{{employee.employeeId}}</td>
+						<td>{{employee.firstName}} {{employee.middleName}}
+							{{employee.lastName}}</td>
+						<td>{{employee.contactNumber}}</td>
+						<td>{{employee.email}}</td>
+						<td>{{employee.designation.designation}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
