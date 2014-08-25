@@ -37,13 +37,13 @@
     $scope.myForm.submitTheForm = function(item, event) {
       console.log("--> Submitting form");
       var dataObject = {
-         name : $scope.myForm.userName
+         userName : $scope.myForm.userName
          ,password  : $scope.myForm.password
       };
 
-      var responsePromise = $http.post("/angularjs-examples/json-test-data.jsp", dataObject, {});
+      var responsePromise = $http.post("http://localhost:8081/ems/login", dataObject, {});
       responsePromise.success(function(dataFromServer, status, headers, config) {
-         console.log(dataFromServer.title);
+         console.log(dataFromServer);
       });
        responsePromise.error(function(data, status, headers, config) {
          alert("Submitting form failed!");
