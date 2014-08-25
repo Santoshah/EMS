@@ -10,7 +10,7 @@
 			controller : function($http){
 				var login = this;
 				login.employees=[];
-				$http.get('http://localhost:8080/ems/employees').success(function(data){
+				$http.get('http://localhost:8081/ems/employees').success(function(data){
 					login.employees=data;
 				});
 			},
