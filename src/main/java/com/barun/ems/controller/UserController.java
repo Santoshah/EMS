@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.barun.ems.domain.User;
 
@@ -14,14 +16,14 @@ import com.barun.ems.domain.User;
  * @author Bibhuti
  *
  */
-@Controller
+@RestController
 public class UserController {
 	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public String signIn(@RequestBody User user){
+	public @ResponseBody boolean signIn(@RequestBody User user){
 		if("bbarun".equals(user.getUserName()) && "August09".equals(user.getPassword())){
-			return "redirect:resources/home.html";
+			return true;
 		} else{
-			return "redirect:resources/login.html";
+			return false;
 		}
 	}
 }

@@ -29,7 +29,7 @@
 	
 	
 	var login = angular.module('login',[]);
-	login.controller("loginController", ['$scope', '$http',function($scope, $http) {
+	login.controller("loginController", ['$scope', '$http','$window',function($scope, $http, $window) {
       $scope.myForm = {};
       $scope.myForm.userName = "username";
       $scope.myForm.password  = "password";
@@ -44,6 +44,11 @@
       var responsePromise = $http.post("http://localhost:8081/ems/login", dataObject, {});
       responsePromise.success(function(dataFromServer, status, headers, config) {
          console.log(dataFromServer);
+         if(dataFromServer){
+        	 $window.location.href="";
+         } else {
+        	 
+         }
       });
        responsePromise.error(function(data, status, headers, config) {
          alert("Submitting form failed!");
