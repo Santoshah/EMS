@@ -10,7 +10,7 @@
 			controller : function($http){
 				var login = this;
 				login.employees=[];
-				$http.get('http://localhost:8081/ems/employees').success(function(data){
+				$http.get('http://localhost:8080/EMS/employees').success(function(data){
 					login.employees=data;
 				});
 			},
@@ -41,7 +41,7 @@
          ,password  : $scope.myForm.password
       };
 
-      var responsePromise = $http.post("http://localhost:8081/ems/login", dataObject, {});
+      var responsePromise = $http.post("http://localhost:8081/EMS/login", dataObject, {});
       responsePromise.success(function(dataFromServer, status, headers, config) {
          console.log(dataFromServer);
          if(dataFromServer){
