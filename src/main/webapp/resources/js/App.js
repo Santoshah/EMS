@@ -27,6 +27,25 @@
 		
 	}]);
 	
+	app.controller("MyCtrl",['$scope',function($scope){
+
+	    $scope.items = ['one', 'two'];
+	    $scope.selected = $scope.items[0];
+
+	    $scope.select= function(item) {
+	       $scope.selected = item; 
+	    };
+	}]);
+	
+	app.controller("tabctrl",['$scope',function($scope){
+		$scope.items = ['one', 'two'];
+	    $scope.selected = $scope.items[0];
+
+	    $scope.select= function(item) {
+	    	console.log(item);
+	       $scope.selected = item; 
+	    };
+	}]);
 	
 	var login = angular.module('login',[]);
 	login.controller("loginController", ['$scope', '$http','$window',function($scope, $http, $window) {
